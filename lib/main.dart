@@ -1,3 +1,4 @@
+import 'package:SaveOnix/screens/alerts/calendar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -5,6 +6,7 @@ import 'providers/reminder_provider.dart';
 import 'providers/expense_provider.dart';
 
 import 'screens/alerts/monthly_expense_screen.dart';
+import 'screens/alerts/calendar_screen.dart';
 import 'screens/alerts/notifications_alerts_screen.dart';
 
 void main() {
@@ -42,7 +44,8 @@ class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
 
   final List<Widget> screens = [
-    ReminderScreen(),
+    //ReminderScreen(),
+    CalendarScreen(),
     NotificationsScreen(),
     MonthlySummaryScreen(),
   ];
@@ -60,7 +63,10 @@ class _HomeScreenState extends State<HomeScreen> {
           });
         },
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.alarm), label: "Alerts"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_month),
+            label: "Calendar",
+          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notifications),
             label: "Notifications",
